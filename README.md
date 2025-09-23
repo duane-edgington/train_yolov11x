@@ -16,6 +16,9 @@ use yaml file from AI documentation
 
 set TATOR_TOKEN
 
+    export TATOR_TOKEN=<blahblahblah>  # token value from TATOR credentials
+    echo $TATOR_TOKEN
+    
 script to download data
 
         aidata download dataset \
