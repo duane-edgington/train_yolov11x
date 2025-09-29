@@ -27,4 +27,5 @@ script to download data
           --labels "Batray","Bird","Boat","Cement_Ship","Egregia","Fish","Jelly","Kayak","Kelp","Mola","Mooring_Buoy","Otter","Person","Pinniped","Secci_Disc","Shark","Surfboard","Velella_velella","Velella_velella_raft","Whale" \
           --single-class "object" \
           --verified \
-          --token $TATOR_TOKEN
+          --token $TATOR_TOKEN \
+          --disable-ssl-verify
