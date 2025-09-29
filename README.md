@@ -29,3 +29,7 @@ script to download data
           --verified \
           --token $TATOR_TOKEN \
           --disable-ssl-verify
+
+logs go to
+
+        ~/mbari_aidata/logs/
