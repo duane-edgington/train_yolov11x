@@ -33,3 +33,12 @@ script to download data
 logs go to
 
         ~/mbari_aidata/logs/
+
+./transform.sh
+
+./voc_to_yolo.sh
+
+./split.sh
+
+
+
