@@ -36,6 +36,9 @@ logs go to
 
 ./transform.sh
 
+        aidata transform voc --base-path $PWD/Sept232025 --resize 640 --crop-size 640  --crop-overlap 0.5 --min-visibility 0.0 --min-dim 20
+
+
 ./voc_to_yolo.sh
 
 ./split.sh
