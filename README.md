@@ -45,6 +45,12 @@ logs go to
 
 ./split.sh
 
+first, activate conda environment for deepsea-ai
+
+        conda activate deepsea-ai
+
+then run deepsea-ai split
+
         deepsea-ai split -i $PWD/Sept232025/transformed -o $PWD/Sept232025split
 
 
