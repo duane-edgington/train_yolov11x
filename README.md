@@ -73,9 +73,14 @@ upload or create data.yaml file
           license: CC BY 4.0
           url: https://universe.roboflow.com/liangdianzhong/-qvdww/dataset/3
 
-Train model from imagenet weights
+# Train model from imagenet weights
 
-In Colab notebook, upload data to google drive, and then move data to appropriate directories
+In Colab notebook, upload data to google drive. Here it is named "uavs"
+
+<img width="1450" height="372" alt="Screenshot 2025-10-01 at 2 54 41 PM" src="https://github.com/user-attachments/assets/b93e7812-a574-4997-a289-05553f39c937" />
+
+
+and then move data to appropriate directories
         
         !mkdir {HOME}/datasets
         %cd {HOME}/datasets
