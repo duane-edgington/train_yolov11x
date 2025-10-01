@@ -41,7 +41,10 @@ logs go to
 
 ./voc_to_yolo.sh
 
+        aidata transform voc-to-yolo  --base-path $PWD/Sept232025/transformed
+
 ./split.sh
 
+        deepsea-ai split -i $PWD/Sept232025/transformed -o $PWD/Sept232025split
 
 
