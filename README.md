@@ -1,5 +1,5 @@
-# train_yolov11x
-documentation on training yolov11x detector model with UAV images
+# train_yolo11x
+documentation on training yolo11x detector model with UAV images
 
 on icefish
 
@@ -94,7 +94,7 @@ In Colab notebook, upload data to google drive, and then move data to appropriat
 
 move the data
 
-        ## make the directories that yolov11 expects
+        ## make the directories that yolo11 expects
         !mkdir /content/datasets/train/
         !mkdir /content/datasets/train/images/
         !mkdir /content/datasets/train/labels/
@@ -123,7 +123,7 @@ move the data
 
 Run the training 
 
-        yolo task=detect mode=train model=yolo11x.pt data=/content/datasets/data.yaml epochs=40 patience=5 imgsz=640 plots=True
+        !yolo task=detect mode=train model=yolo11x.pt data=/content/datasets/data.yaml epochs=40 patience=5 imgsz=640 plots=True
 
 Here are examles of yolo11x training commands, with different starting weights
 
@@ -135,3 +135,25 @@ Here are examles of yolo11x training commands, with different starting weights
         
         # Build a new model from YAML, transfer pretrained weights to it and start training
         yolo detect train data=coco8.yaml model=yolo11x.yaml pretrained=yolo11x.pt epochs=100 imgsz=640
+
+Save the results of training
+
+        !cp "/content/runs/detect/train/weights/best.pt" "/content/drive/MyDrive/uavs/best.pt"
+        !cp "/content/runs/detect/train/weights/last.pt" "/content/drive/MyDrive/uavs/last.pt"
+        !cp -r "/content/runs/detect/train/" "/content/drive/MyDrive/uavs/train/"
+
+NOTE: The results of the completed training are saved in {HOME}/runs/detect/train/. Let's examine them.
+
+        !ls {HOME}/runs/detect/train/
+        from IPython.display import Image as IPyImage
+        IPyImage(filename=f'{HOME}/runs/detect/train/confusion_matrix.png', width=600)
+        IPyImage(filename=f'{HOME}/runs/detect/train/results.png', width=600)
+        IPyImage(filename=f'{HOME}/runs/detect/train/val_batch0_pred.jpg', width=600)
+
+Validate the trained model
+
+        !yolo task=detect mode=val model=/content/runs/detect/train/weights/best.pt data=/content/datasets/data.yaml
+
+Inference the test set with the trained model
+
+        !yolo task=detect mode=predict model=/content/runs/detect/train/weights/best.pt conf=0.25 source=/content/datasets/test/images/test/ save=True
