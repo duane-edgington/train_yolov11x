@@ -73,7 +73,7 @@ upload or create data.yaml file
           license: CC BY 4.0
           url: https://universe.roboflow.com/liangdianzhong/-qvdww/dataset/3
 
-# Train model from imagenet weights
+# Train model from COCO weights  https://docs.ultralytics.com/models/yolo11/ 
 
 In Colab notebook, upload data to google drive. Here it is named "uavs"
 
