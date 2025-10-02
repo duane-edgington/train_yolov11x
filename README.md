@@ -21,6 +21,8 @@ set TATOR_TOKEN
     
 script to download data
 
+./download_selected_dataset.sh
+
         aidata download dataset \
           --config https://docs.mbari.org/internal/ai/projects/config/config_uav.yml \
           --base-path $PWD/Sept232025 --voc \
