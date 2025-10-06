@@ -47,13 +47,10 @@ logs go to
 
 ./split.sh
 
-first, activate conda environment for deepsea-ai
+then run split. See the transform command for more details
 
-        conda activate deepsea-ai
+        aidata transform split -i $PWD/Sept232025/transformed -o $PWD/Sept232025split
 
-then run deepsea-ai split
-
-        deepsea-ai split -i $PWD/Sept232025/transformed -o $PWD/Sept232025split
 
 # Train yolo11x model
 
@@ -75,7 +72,7 @@ upload or create data.yaml file
           license: CC BY 4.0
           url: https://universe.roboflow.com/liangdianzhong/-qvdww/dataset/3
 
-# Train model from COCO weights  https://docs.ultralytics.com/models/yolo11/ 
+Train model from COCO weights  https://docs.ultralytics.com/models/yolo11/ 
 
 In Colab notebook, upload data to google drive. Here it is named "uavs"
 
