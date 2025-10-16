@@ -51,6 +51,10 @@ then run split. See the transform command for more details
 
         aidata transform split -i $PWD/Sept232025/transformed -o $PWD/Sept232025split
 
+another run
+
+        python3 mbari_aidata transform split -i $PWD/Oct162025/transformed -o $PWD/Oct162025split
+
 
 # Train yolo11x model
 
